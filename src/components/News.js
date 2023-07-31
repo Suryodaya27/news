@@ -20,13 +20,15 @@ export class News extends Component {
 
 
   constructor() {
-    super();
-    this.state = {
-      articles: [],
-      loading: false,
-      page: 1,
-    };
-  }
+  super();
+  this.state = {
+    articles: [],
+    loading: false,
+    page: 1,
+    totalResults: 0, // Initialize totalResults with 0
+  };
+}
+
 
   async componentDidMount() {
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4204173cb21c420aa998f7210ce467b1&page=1&pageSize=${this.props.pageSize}`;
